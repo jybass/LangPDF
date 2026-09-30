@@ -1,0 +1,73 @@
+/* Fundo da janela principal (Cinza bem claro, estilo Apple) */
+QMainWindow {
+    background-color: #F2F2F7;
+}
+
+/* Esconde a barra do divisor para criar "White Space" */
+QSplitter::handle {
+    background: transparent;
+    width: 20px; /* Cria um vão de 20px entre os painéis */
+}
+
+/* O estilo do "Cartão" (Card) onde vão ficar o PDF e o Quadro */
+QWidget#CardWidget {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid #E5E5EA; /* Borda super sutil */
+}
+
+/* Botões minimalistas (sem fundo até passar o mouse) */
+QPushButton {
+    background-color: transparent;
+    color: #1C1C1E;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+QPushButton:hover {
+    background-color: #E5E5EA; /* Cinza claro ao passar o mouse */
+}
+
+QPushButton:pressed {
+    background-color: #D1D1D6; /* Cinza mais escuro ao clicar */
+    color: #000000;
+}
+
+/* Remove a borda feia nativa da área de rolagem do PDF */
+QScrollArea {
+    border: none;
+    background-color: transparent;
+}
+
+/* =======================================================
+   Transformando a Barra de Rolagem no estilo macOS
+======================================================= */
+QScrollBar:vertical {
+    border: none;
+    background: transparent;
+    width: 10px;
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #C7C7CC; /* Cor da pílula */
+    min-height: 30px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: #8E8E93; /* Escurece ao passar o mouse */
+}
+
+/* Esconde as setinhas de subir/descer nativas do Windows */
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    border: none;
+    background: none;
+    height: 0px;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}

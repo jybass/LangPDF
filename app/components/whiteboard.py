@@ -2,6 +2,7 @@ from PySide6.QtWidgets import QGraphicsView, QGraphicsScene
 from PySide6.QtGui import QPainterPath, QPen, QPainter
 from PySide6.QtCore import Qt
 
+
 class Whiteboard(QGraphicsView):
     def __init__(self):
         super().__init__()
