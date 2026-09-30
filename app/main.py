@@ -3,19 +3,7 @@ from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (QApplication, QMainWindow, QSplitter, QWidget, QVBoxLayout, QLabel, QHBoxLayout, QPushButton)
 
 from components.pdf_viewer import PdfViewer
-
-class Whiteboard(QWidget):
-    def __init__(self):
-            super().__init__()
-    
-            layout = QVBoxLayout()
-
-            label = QLabel("Whiteboard")
-            label.setAlignment(Qt.AlignCenter)
-
-            self.setStyleSheet("background-color: #1e1e1e; color: a0a0a0; font-size: 18px;")
-            layout.addWidget(label)
-            self.setLayout(layout)
+from components.whiteboard import Whiteboard
 
             
 class MainWindow(QMainWindow):
@@ -61,9 +49,10 @@ class MainWindow(QMainWindow):
         left_layout.addLayout(toolbar_layout)
         left_layout.addWidget(self.pdf_panel)
 
+        self.whiteboard = Whiteboard()
 
         self.splitter.addWidget(left_panel)
-        self.splitter.addWidget(self.canvas_panel)
+        self.splitter.addWidget(self.whiteboard)
 
         self.splitter.setSizes([500,700])
 
